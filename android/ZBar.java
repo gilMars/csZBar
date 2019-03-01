@@ -17,6 +17,7 @@ public class ZBar extends CordovaPlugin {
     // Configuration ---------------------------------------------------
 
     private static int SCAN_CODE = 1;
+    private static int RESULT_DIGITADO = 1549987263;
 
 
     // State -----------------------------------------------------------

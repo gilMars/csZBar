@@ -57,9 +57,22 @@
             android:onClick="toggleFlash"
             android:longClickable="true"
             android:visibility="visible"
-            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
+
+        <Button
+            android:id="@+id/digitarButton"
+            android:text="DIGITAR CÓDIGO"
+            android:textColor="#FFFFFF"
+            android:onClick="onDigitar"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:visibility="visible"
+            android:background="#50d2c2"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true" />
 
     </RelativeLayout>
 

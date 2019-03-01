@@ -59,6 +59,7 @@ implements SurfaceHolder.Callback {
     public static final String EXTRA_PARAMS = "params";
     public static final int RESULT_ERROR = RESULT_FIRST_USER + 1;
     private static final int CAMERA_PERMISSION_REQUEST = 1;
+    private static final String RESULT_DIGITADO = "-1549987263";
     // State -----------------------------------------------------------
 
     private Camera camera;
@@ -135,8 +136,8 @@ implements SurfaceHolder.Callback {
             JSONObject params;
             try { params = new JSONObject(paramStr); }
             catch (JSONException e) { params = new JSONObject(); }
-            String textTitle = params.optString("text_title");
-            String textInstructions = params.optString("text_instructions");
+            // String textTitle = params.optString("text_title");
+            // String textInstructions = params.optString("text_instructions");
             Boolean drawSight = params.optBoolean("drawSight", true);
             whichCamera = params.optString("camera");
             flashMode = params.optString("flash");
@@ -156,10 +157,10 @@ implements SurfaceHolder.Callback {
             setContentView(getResourceId("layout/cszbarscanner"));
 
             // Update view with customisable strings
-            TextView view_textTitle = (TextView) findViewById(getResourceId("id/csZbarScannerTitle"));
-            TextView view_textInstructions = (TextView) findViewById(getResourceId("id/csZbarScannerInstructions"));
-            view_textTitle.setText(textTitle);
-            view_textInstructions.setText(textInstructions);
+            // TextView view_textTitle = (TextView) findViewById(getResourceId("id/csZbarScannerTitle"));
+            // TextView view_textInstructions = (TextView) findViewById(getResourceId("id/csZbarScannerInstructions"));
+            // view_textTitle.setText(textTitle);
+            // view_textInstructions.setText(textInstructions);
 
             // Draw/hide the sight
             if(!drawSight) {
@@ -172,12 +173,12 @@ implements SurfaceHolder.Callback {
                 public void onSizeChanged (int w, int h, int oldW, int oldH) {
                     surfW = w;
                     surfH = h;
-                    matchSurfaceToPreviewRatio();
+                    //matchSurfaceToPreviewRatio();
                 }
             };
             scannerSurface.setLayoutParams(new FrameLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.MATCH_PARENT,
+                     getWindowManager().getDefaultDisplay().getHeight()-60,
                     Gravity.CENTER
             ));
             scannerSurface.getHolder().addCallback(this);
@@ -186,8 +187,9 @@ implements SurfaceHolder.Callback {
             FrameLayout scannerView = (FrameLayout) findViewById(getResourceId("id/csZbarScannerView"));
             scannerView.addView(scannerSurface);
 
-            findViewById(getResourceId("id/csZbarScannerTitle")).bringToFront();
-            findViewById(getResourceId("id/csZbarScannerInstructions")).bringToFront();
+            // findViewById(getResourceId("id/csZbarScannerTitle")).bringToFront();
+            // findViewById(getResourceId("id/csZbarScannerInstructions")).bringToFront();
+            // findViewById(getResourceId("id/digitarButton")).bringToFront();
             findViewById(getResourceId("id/csZbarScannerSightContainer")).bringToFront();
             findViewById(getResourceId("id/csZbarScannerSight")).bringToFront();
             scannerView.requestLayout();
@@ -294,7 +296,7 @@ implements SurfaceHolder.Callback {
 
         surfW = w;
         surfH = h;
-        matchSurfaceToPreviewRatio();
+        //matchSurfaceToPreviewRatio();
 
         tryStopPreview();
         holder = hld;
@@ -331,6 +333,13 @@ implements SurfaceHolder.Callback {
         tryStopPreview();
         tryStartPreview();
 
+    }
+
+    public void onDigitar(View view) {
+        Intent result = new Intent ();
+        result.putExtra(EXTRA_QRVALUE, RESULT_DIGITADO);
+        setResult(Activity.RESULT_OK, result);
+        finish();
     }
 
     public void toggleFlash(View view) {

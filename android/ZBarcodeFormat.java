@@ -43,7 +43,7 @@ public class ZBarcodeFormat {
         ALL_FORMATS.add(ZBarcodeFormat.CODABAR);
         ALL_FORMATS.add(ZBarcodeFormat.CODE39);
         ALL_FORMATS.add(ZBarcodeFormat.PDF417);
-        ALL_FORMATS.add(ZBarcodeFormat.QRCODE);
+       // ALL_FORMATS.add(ZBarcodeFormat.QRCODE);
         ALL_FORMATS.add(ZBarcodeFormat.CODE93);
         ALL_FORMATS.add(ZBarcodeFormat.CODE128);
     }

@@ -8,7 +8,8 @@ import java.util.ArrayList;
 public class ZBarcodeFormat {
     private int mId;
     private String mName;
-
+    
+    public static final ZBarcodeFormat NONE = new ZBarcodeFormat(Symbol.NONE, "NONE");
     public static final ZBarcodeFormat CODE128 = new ZBarcodeFormat(Symbol.CODE128, "CODE128");
 
     public static final List<ZBarcodeFormat> ALL_FORMATS = new ArrayList<ZBarcodeFormat>();

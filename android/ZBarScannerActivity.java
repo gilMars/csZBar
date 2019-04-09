@@ -304,6 +304,7 @@ implements SurfaceHolder.Callback {
         holder = hld;
         tryStartPreview();
     }
+    /*
     public void onConfigurationChanged(Configuration newConfig)
     {
         super.onConfigurationChanged(newConfig);
@@ -336,6 +337,7 @@ implements SurfaceHolder.Callback {
         tryStartPreview();
 
     }
+    */
 
     public void onDigitar(View view) {
         Intent result = new Intent ();

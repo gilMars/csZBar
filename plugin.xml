@@ -26,7 +26,7 @@
         <config-file target="AndroidManifest.xml" parent="application">
         <activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
                 android:name="org.cloudsky.cordovaPlugins.ZBarScannerActivity"
-                android:screenOrientation="fullUser"
+                android:screenOrientation="landscape"
                 android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
         </config-file>
         <config-file target="AndroidManifest.xml" parent="/*">
@@ -35,13 +35,6 @@
             <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
             <uses-feature android:name="android.hardware.camera.front" android:required="false" />
             <uses-permission android:name="android.permission.CAMERA" />
-        </config-file>
-        <config-file target="res/values/strings.xml" parent="/*">
-            <string name="csZbarScannerTitle">Scan QR Code</string>
-            <string name="csZbarScannerInstructions">Please point your camera at the QR code.</string>
-            <color name="csZbarScannerTextColor">#ffffff</color>
-            <color name="csZbarScannerTextBackground">#88000000</color>
-            <color name="csZbarScannerBackground">#000000</color>
         </config-file>
         <framework src="com.android.support:support-v4:23.1.0" />
         <resource-file src="android/res/layout/cszbarscanner.xml" target="res/layout/cszbarscanner.xml" />

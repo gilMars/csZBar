@@ -348,7 +348,7 @@ implements SurfaceHolder.Callback {
 
     public void toggleFlash(View view) {
 		camera.startPreview();
-        android.hardware.Camera.Parameters camParams = camera.getParameters();
+        // android.hardware.Camera.Parameters camParams = camera.getParameters();
         //If the flash is set to off
         try {
             if (camParams.getFlashMode().equals(Parameters.FLASH_MODE_OFF) && !(camParams.getFlashMode().equals(Parameters.FLASH_MODE_TORCH)) && !(camParams.getFlashMode().equals(Parameters.FLASH_MODE_ON)))
@@ -539,7 +539,7 @@ implements SurfaceHolder.Callback {
                // camera.setDisplayOrientation(rotation);
                 // setCameraDisplayOrientation(this, 0);
 
-                android.hardware.Camera.Parameters camParams = camera.getParameters();
+                // android.hardware.Camera.Parameters camParams = camera.getParameters();
 
                 //camParams.setFlashMode(Parameters.FLASH_MODE_TORCH);
 
